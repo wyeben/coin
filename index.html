@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heads</title>
+</head>
+<body>
+    <button class="9a-btn">9a</button>
+    <button class="sb-btn">9b</button>
+
+    <button class="heads" onclick={displayIt()}>heads</button>
+    <button class="tails" onclick={displayIt2()}>tails</button>
+    <p class="display"></p>
+
+    <input type="text" class="input" placeholder="Enter your name"  onkeydown="keydown()">
+    <button class="submit" onclick={showName()}>Submit</button>
+    <p class="input-para"></p>
+    <script>
+        // console.log(document.querySelector('button').innerHTML = 'good');
+        console.log(document.querySelector('.sb-btn').innerHTML = '9b done!');
+
+        let heads = document.querySelector('.heads');
+        let tails = document.querySelector('.tails');
+        let display = document.querySelector('.display');
+
+       
+
+        function showName(){
+             let inputElement = document.querySelector('.input').value;
+             let inputPara = document.querySelector('.input-para');
+
+                inputPara.innerHTML = `You'r name is: ${inputElement}`;
+
+        }
+
+        function keydown(){
+            if(event.key === 'Enter'){
+               showName()
+              }
+        }
+
+        function displayIt(){
+            
+                display.innerHTML = 'You choose heads'
+            
+        }
+
+        function displayIt2(){
+           
+                display.innerHTML = 'You choose tails'
+            
+        }
+    </script>
+</body>
+</html>
